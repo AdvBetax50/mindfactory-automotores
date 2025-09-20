@@ -7,7 +7,7 @@ import {
   Index,
   OneToMany,
 } from 'typeorm';
-import { VinculoSujetoObjeto } from '../../vinculo-sujeto-objeto/domain/vinculo-sujeto-objeto.entity';
+import { VinculoSujetoObjeto } from '../vinculo-sujeto-objeto/vinculo-sujeto-objeto.entity';
 
 @Entity('Sujeto')
 export class Sujeto {

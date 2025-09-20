@@ -1,7 +1,7 @@
-import { Sujeto } from '../modules/sujeto/domain/sujeto.entity';
-import { ObjetoDeValor } from '../modules/objeto-de-valor/domain/objeto-de-valor.entity';
-import { Automotor } from '../modules/automotor/domain/automotor.entity';
-import { VinculoSujetoObjeto } from '../modules/vinculo-sujeto-objeto/domain/vinculo-sujeto-objeto.entity';
+import { Sujeto } from 'src/domain/sujeto/sujeto.entity';
+import { ObjetoDeValor } from 'src/domain/objeto-de-valor/objeto-de-valor.entity';
+import { Automotor } from 'src/domain/automotor/automotor.entity';
+import { VinculoSujetoObjeto } from 'src/domain/vinculo-sujeto-objeto/vinculo-sujeto-objeto.entity';
 import { AppDataSource } from 'data-source';
 
 async function seed() {

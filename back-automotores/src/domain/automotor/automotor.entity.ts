@@ -7,7 +7,7 @@ import {
   Index,
   JoinColumn,
 } from 'typeorm';
-import { ObjetoDeValor } from '../../objeto-de-valor/domain/objeto-de-valor.entity';
+import { ObjetoDeValor } from '../objeto-de-valor/objeto-de-valor.entity';
 
 @Entity('Automotores')
 @Index('idx_automotores_ovp', ['atr_ovp_id'])

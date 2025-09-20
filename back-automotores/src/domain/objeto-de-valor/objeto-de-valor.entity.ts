@@ -6,8 +6,8 @@ import {
   UpdateDateColumn,
   OneToMany,
 } from 'typeorm';
-import { Automotor } from '../../automotor/domain/automotor.entity';
-import { VinculoSujetoObjeto } from '../../vinculo-sujeto-objeto/domain/vinculo-sujeto-objeto.entity';
+import { Automotor } from '../automotor/automotor.entity';
+import { VinculoSujetoObjeto } from '../vinculo-sujeto-objeto/vinculo-sujeto-objeto.entity';
 
 @Entity('Objeto_De_Valor')
 export class ObjetoDeValor {
