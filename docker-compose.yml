@@ -17,6 +17,7 @@ services:
     build:
       context: ./back-automotores
       dockerfile: Dockerfile
+    # command: sh -c "npm run migration:run && npm run seed"
     container_name: back-automotores
     env_file:
       - ./back-automotores/.env
