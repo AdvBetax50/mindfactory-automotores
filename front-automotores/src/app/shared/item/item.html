@@ -1,0 +1,6 @@
+@if(item) {
+  @for (key of getObjectKeys(item); track $index) {
+    <h3>{{key}}: {{item[key]}}</h3>
+  }
+  <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+}

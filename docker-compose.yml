@@ -17,7 +17,7 @@ services:
     build:
       context: ./back-automotores
       dockerfile: Dockerfile
-    # command: sh -c "npm run migration:run && npm run seed"
+    command: sh -c "npm run typeorm migration:generate ./src/migrations/InitSchema && npm run typeorm migration:run && npm run seed"
     container_name: back-automotores
     env_file:
       - ./back-automotores/.env
@@ -29,7 +29,7 @@ services:
       - app_network
 
   db:
-    image: postgres:17
+    image: postgres:16
     container_name: postgres_db
     restart: always
     env_file:
