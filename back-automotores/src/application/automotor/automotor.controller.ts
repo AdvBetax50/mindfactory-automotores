@@ -23,15 +23,15 @@ export class AutomotorController {
     return this.automotorService.create(body);
   }
 
-  // TODO: this
-  @Put(':dominio')
-  update(@Param('id') dominio: string, @Body() body: UpdateAutomotorDto) {
-    return this.automotorService.update(dominio, body);
-  }
+  // // TODO: this
+  // @Put(':dominio')
+  // update(@Param('id') dominio: string, @Body() body: UpdateAutomotorDto) {
+  //   return this.automotorService.update(dominio, body);
+  // }
 
-  // TODO: this
-  @Delete(':dominio')
-  remove(@Param('dominio') dominio: string) {
-    return this.automotorService.remove(dominio);
-  }
+  // // TODO: this
+  // @Delete(':dominio')
+  // remove(@Param('dominio') dominio: string) {
+  //   return this.automotorService.remove(dominio);
+  // }
 }

@@ -12,7 +12,7 @@ export const AppDataSource = new DataSource({
   database: process.env.DB_NAME || "mf-auto",
   synchronize: false, // never use true in prod
   logging: true,
-  entities: ["src/modules/**/domain/*.entity.ts"],
-  migrations: ["src/migrations/*.ts"], // path to compiled migrations
+  entities: [__dirname + '/domain/**/*.entity.ts'],
+  migrations: [__dirname + '/migrations/*.ts'],
   subscribers: [],
 });

@@ -2,7 +2,7 @@ import { Sujeto } from 'src/domain/sujeto/sujeto.entity';
 import { ObjetoDeValor } from 'src/domain/objeto-de-valor/objeto-de-valor.entity';
 import { Automotor } from 'src/domain/automotor/automotor.entity';
 import { VinculoSujetoObjeto } from 'src/domain/vinculo-sujeto-objeto/vinculo-sujeto-objeto.entity';
-import { AppDataSource } from 'data-source';
+import { AppDataSource } from 'src/data-source';
 
 async function seed() {
   await AppDataSource.initialize();
@@ -13,12 +13,17 @@ async function seed() {
   const automotorRepo = AppDataSource.getRepository(Automotor);
   const vinculoRepo = AppDataSource.getRepository(VinculoSujetoObjeto);
 
+  console.log('got repositories...');
+
   // 1️⃣ Create a Sujeto (owner)
   const sujeto = sujetoRepo.create({
     spo_cuit: '20304050607',
     spo_denominacion: 'Juan Pérez',
   });
+
+  console.log('sujeto');
   await sujetoRepo.save(sujeto);
+  console.log('SAVED sujeto');
 
   // 2️⃣ Create Objeto_De_Valor for an Automotor
   const ovp = objetoRepo.create({
