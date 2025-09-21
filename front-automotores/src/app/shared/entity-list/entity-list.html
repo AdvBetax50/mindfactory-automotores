@@ -1,0 +1,10 @@
+<div class="card">
+  <h2 class="card-header">{{title}}</h2>
+  <div class="card-body">
+  @for (item of list; track item; let i = $index) {
+    <div class="border mt-3">
+      <app-item [item]="item"></app-item>
+    </div>
+  }
+  </div>
+</div>
