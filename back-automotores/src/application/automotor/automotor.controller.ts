@@ -1,6 +1,8 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { AutomotorService } from 'src/domain/automotor/automotor.service';
 import { Automotor } from 'src/domain/automotor/automotor.entity';
+import { CreateAutomotorDto } from './dtos/create-automotor.dto';
+import { UpdateAutomotorDto } from './dtos/update-automotor.dto';
 
 @Controller('automotores')
 export class AutomotorController {
@@ -16,21 +18,20 @@ export class AutomotorController {
     return this.automotorService.findByDominio(dominio);
   }
 
-  // TODO: validar body es de tipo automotor
   @Post()
-  create(@Body() body: any) {
+  create(@Body() body: CreateAutomotorDto) {
     return this.automotorService.create(body);
   }
 
-  // TODO: validar body es de tipo automotor
+  // TODO: this
   @Put(':dominio')
-  update(@Param('id') dominio: string, @Body() body: any) {
+  update(@Param('id') dominio: string, @Body() body: UpdateAutomotorDto) {
     return this.automotorService.update(dominio, body);
   }
 
+  // TODO: this
   @Delete(':dominio')
   remove(@Param('dominio') dominio: string) {
-    // remove(@Param('dominio') dominio: string): Promise <> {
     return this.automotorService.remove(dominio);
   }
 }

@@ -1,15 +1,13 @@
-import { IsString, IsNotEmpty, Length } from 'class-validator';
+import { IsString, IsNotEmpty, Length, MaxLength } from 'class-validator';
 
 export class CreateSujetoDto {
   @IsString()
   @IsNotEmpty()
-  nombre: string;
+  @Length(11, 11, { message: 'CUIT must be exactly 11 characters long' })
+  cuit: string;
 
   @IsString()
   @IsNotEmpty()
-  apellido: string;
-
-  @IsString()
-  @Length(11, 11, { message: 'CUIT must be exactly 11 characters long' })
-  spoCuit: string;
+  @MaxLength(160)
+  denominacion: string;
 }

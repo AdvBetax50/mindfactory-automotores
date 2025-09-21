@@ -1,20 +1,35 @@
-import { IsString, IsNotEmpty, IsInt, Min, Max } from 'class-validator';
+import { IsString, IsNotEmpty, IsInt, Min, Length, IsDateString } from 'class-validator';
 
 export class CreateAutomotorDto {
   @IsString()
   @IsNotEmpty()
-  marca: string;
+  dominio: string;
 
   @IsString()
-  @IsNotEmpty()
-  modelo: string;
+  numero_chasis: string;
 
   @IsString()
-  @IsNotEmpty()
-  patente: string;
+  numero_motor: string;
+
+  @IsString()
+  color: string;
 
   @IsInt()
-  @Min(1900)
-  @Max(new Date().getFullYear())
-  anio: number;
+  @IsNotEmpty()
+  @Min(190001)
+  // TODO: set MAX for today date
+  fecha_fabricacion: number;
+
+  @IsDateString()
+  @IsNotEmpty()
+  fecha_alta_registro: string;
+
+  @IsString()
+  @IsNotEmpty()
+  @Length(11, 11, { message: 'CUIT must be exactly 11 characters long' })
+  cuit_duenio: string;
+
+  @IsInt()
+  @IsNotEmpty()
+  objeto_id: number;
 }

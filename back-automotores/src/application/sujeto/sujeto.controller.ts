@@ -1,6 +1,7 @@
 import { Controller, Get, Post, Query, Body } from '@nestjs/common';
 import { SujetoService } from '../../domain/sujeto/sujeto.service';
 import { Sujeto } from 'src/domain/sujeto/sujeto.entity';
+import { CreateSujetoDto } from './dtos/create-sujeto.dto';
 
 @Controller('sujetos')
 export class SujetoController {
@@ -18,7 +19,7 @@ export class SujetoController {
   }
 
   @Post()
-  create(@Body() body: any) {
+  create(@Body() body: CreateSujetoDto) {
     return this.sujetoService.create(body);
   }
 }
